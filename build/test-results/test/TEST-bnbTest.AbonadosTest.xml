@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bnbTest.AbonadosTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-24T03:40:11" hostname="MSI" time="408.659">
+  <properties/>
+  <testcase name="verifyDeleteAbonadoOtroBanco()" classname="bnbTest.AbonadosTest" time="408.659"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[feb. 23, 2023 11:40:27 P. M. io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
