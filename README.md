@@ -1,5 +1,5 @@
 # ModuloAbonadosNacionales
 Proyecto Final del Diplomado UCB
 Integrantes:
-Kassandra Chavez 
+Kassandra Chavez Chinche 
 Gabriela Choque Guevara
