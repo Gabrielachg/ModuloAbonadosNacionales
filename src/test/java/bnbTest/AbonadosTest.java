@@ -84,4 +84,34 @@ public class AbonadosTest {
         Assertions.assertFalse(abonadosPage.abonadoText(NOMBRE_CUENTA_GANADERO).isControlDisplayed());
     }
 
+    @Test
+    public void verifyDeleteAbonadoCuentaLocal(){
+        nombreGrupo = utils.createRandomName();
+        Session.getInstance().getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        mainPageBNB.popupButton.click();
+        androidPopup.mientrasLaAppEsteUsoButton.click();
+        mainPageBNB.operacionesButton.click();
+        operacionesPage.abonadosButton.scrollAndClick(REGISTRO_DE_ABONADOS);
+        operacionesPage.abonadosNacionalesButton.click();
+        operacionesPage.addGroupAbonadosButton.click();
+        operacionesPage.registrarGrupoTextbox.setText(nombreGrupo);
+        operacionesPage.aceptarButton.click();
+        grupoAbonados.ingresarGrupo(nombreGrupo).click();
+        operacionesPage.verAbonadosButton.click();
+        abonadosPage.addAbonadoButton.click();
+        registroDeAbonadoPage.bancoDropDownMenu.click();
+        registroDeAbonadoPage.tipoProductoDropdownMenu.click();
+        registroDeAbonadoPage.cajaAhorroTextbutton.click();
+        registroDeAbonadoPage.numeroCuentaTextbox.waitTime();
+        registroDeAbonadoPage.numeroCuentaTextbox.setText(NRO_CUENTA_NACIONAL_BOLIVIA);
+        registroDeAbonadoPage.verificarCuentaButton.click();
+        registroDeAbonadoPage.registrarButton.scrollAndClick("Registrar");
+        registroDeAbonadoPage.aceptarButton.click();
+        abonadosPage.abonadoText(NOMBRE_ABONADO_NACIONAL_BOLIVIA).click();
+        abonadosPage.eliminarAbonadoButton.click();
+        abonadosPage.aceptarEliminarAbonadoButton.click();
+        Assertions.assertFalse(abonadosPage.abonadoText(NOMBRE_ABONADO_NACIONAL_BOLIVIA).isControlDisplayed());
+
+    }
+
 }
