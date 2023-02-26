@@ -69,7 +69,6 @@ public class AbonadosTest {
         Assertions.assertTrue(abonadosPage.abonadoText(NOMBRE_ABONADO_NACIONAL_BOLIVIA).isControlDisplayed());
     }
 
-
     @Test
     public void verifyDeleteAbonadoOtroBanco() {
         nombreGrupo = utils.createRandomName();

@@ -20,6 +20,7 @@ public class GrupoTest {
     MainPageBNB mainPageBNB = new MainPageBNB();
     OperacionesPage operacionesPage = new OperacionesPage();
     GrupoAbonados grupoAbonados = new GrupoAbonados();
+    String nombreGrupo = "";
 
     @BeforeEach
     public void init() {
@@ -30,7 +31,9 @@ public class GrupoTest {
 
     @AfterEach
     public void closeApp() {
-        grupoAbonados.grupoButton.click();
+
+        grupoAbonados.ingresarGrupo(nombreGrupo).waitTime();
+        grupoAbonados.ingresarGrupo(nombreGrupo).click();
         grupoAbonados.eliminarGrupoButton.click();
         grupoAbonados.aceptarEliminarGrupoButton.click();
         Session.getInstance().closeApp();
@@ -38,11 +41,12 @@ public class GrupoTest {
 
     @Test
     public void verifyCreateGrupo() {
-        String nombreGrupo = utils.createRandomName();
+        nombreGrupo = utils.createRandomName();
+        mainPageBNB.popupButton.waitTime();
         mainPageBNB.popupButton.click();
         androidPopup.mientrasLaAppEsteUsoButton.click();
         mainPageBNB.operacionesButton.click();
-        operacionesPage.abonadosButton.click();
+        operacionesPage.abonadosButton.scrollAndClick(REGISTRO_DE_ABONADOS);
         operacionesPage.abonadosNacionalesButton.click();
         operacionesPage.addGroupAbonadosButton.click();
         operacionesPage.registrarGrupoTextbox.setText(nombreGrupo);

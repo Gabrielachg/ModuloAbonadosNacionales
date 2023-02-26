@@ -2,9 +2,8 @@ package utils;
 
 import activity.androidViews.AndroidPopup;
 import activity.bnbBank.*;
-import org.junit.jupiter.api.Assertions;
-
 import java.security.SecureRandom;
+import static utils.Constantes.REGISTRO_DE_ABONADOS;
 
 public class Utilities {
     AndroidPopup androidPopup = new AndroidPopup();
@@ -27,7 +26,7 @@ public class Utilities {
         mainPageBNB.popupButton.click();
         androidPopup.mientrasLaAppEsteUsoButton.click();
         mainPageBNB.operacionesButton.click();
-        operacionesPage.abonadosButton.click();
+        operacionesPage.abonadosButton.scrollAndClick(REGISTRO_DE_ABONADOS);
         operacionesPage.abonadosNacionalesButton.click();
         operacionesPage.addGroupAbonadosButton.click();
         operacionesPage.registrarGrupoTextbox.setText(nombreGrupo);
